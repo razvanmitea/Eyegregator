@@ -1,0 +1,15 @@
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.dll
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.pdb
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.dll.mdb
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.Eyegregator.apk
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.Eyegregator-Signed.apk
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\SQLite.dll
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\Eyegregator.dll
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\Eyegregator.pdb
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\android\bin\Eyegregator.Eyegregator.apk
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\res\layout\main.xml
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\res\values\strings.xml
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\res\drawable\icon.png
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\res\layout\newrsssourceentry.xml
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\R.cs.flag
+C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\obj\Debug\uploadflags.txt

@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Eyegregator\MainActivity.cs">
+    <Files>
+      <File FileName="Eyegregator\MainActivity.cs" Line="144" Column="13" />
+      <File FileName="Eyegregator\Controller\GetRSS.cs" Line="1" Column="1" />
+      <File FileName="Eyegregator\Model\RSSSources.cs" Line="1" Column="1" />
+      <File FileName="Eyegregator\Utils\DelegateMenuItemListener.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint hitAction="PrintExpression" traceExpression="{ex}" file="C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\Controller\GetRSS.cs" line="48" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Eyegregator MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="emulator-5554" />
+</Properties>

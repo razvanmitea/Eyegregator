@@ -1,0 +1,2 @@
+Eyegregator.RSSActivity;eyegregator.RSSActivity
+Eyegregator.DelegatedMenuItemListener;eyegregator.DelegatedMenuItemListener
