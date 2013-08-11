@@ -22,14 +22,21 @@ namespace Eyegregator.Controller
 		String streamResult;
 		public List<string> Urls
 		{ get; set ;}
-		public List<string> rssFeeds = new List<string>();
+
+
+		public List<rssFeeds> RssFeeds = new List<rssFeeds>();
+		//public IDictionary<string,string> RssFeeds;
 
 
         public RSSUtil()
         {
-			rssFeeds.Clear ();
+			//if (RssFeeds == null)
+			//	RssFeeds = new Dictionary<string, string> ();
+
 			bgndWorker.DoWork += (sender, e) => 
 			{
+				if (RssFeeds.Any ())
+					RssFeeds.Clear ();
 				foreach (var _url in Urls) {		
 					try {
 						var httpReq = (HttpWebRequest)HttpWebRequest.Create (new Uri(_url));
@@ -41,7 +48,9 @@ namespace Eyegregator.Controller
 								streamResult = reader.ReadToEnd ();	
 								doc.LoadXml (streamResult);
 								foreach (var item in doc.GetElementsByTagName("title").Cast<XmlNode>()) {
-									rssFeeds.Add (item.InnerText);
+									RssFeeds.Add(new rssFeeds()
+									             {Link = item.ParentNode["link"].InnerText == String.Empty ? item.ParentNode["link"].NextSibling.InnerText : item.ParentNode["link"].InnerText,
+										Title = item.InnerText});
 								}
 							}
 						}	
@@ -54,4 +63,13 @@ namespace Eyegregator.Controller
 
 
     }
+	public class rssFeeds
+	{
+		string link;
+		public string Link{ get {return link;}  set{ this.link = value;}}
+
+		string title;
+		public string Title{ get {return title;}  set{ this.title = value;}}
+	}
+
 }

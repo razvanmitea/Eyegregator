@@ -11,6 +11,7 @@ using SQLite;
 using System.Collections.Generic;
 using Eyegregator.Controller;
 using System;
+using System.Collections;
 
 
 
@@ -44,7 +45,9 @@ namespace Eyegregator
 
 				//todo clear list
 				listViewRSS.Adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, 
-				                                                rssUtil.rssFeeds.ToArray ());
+				                                                rssUtil.RssFeeds.Select(x=>x.Title).ToArray());
+
+
 				SetProgressBarIndeterminateVisibility (false);
 				opType = OpType.Feeds;
 			};
@@ -75,18 +78,6 @@ namespace Eyegregator
 		private string GetUrl(RSSSources rss)
 		{
 			return rss.Url;
-		}
-
-		private object FindEntryIDRSSSources(string url)
-		{
-			SetProgressBarIndeterminateVisibility (true);
-			var entry = 0;
-			DB.QueryAsync<RSSSources> ("SELECT ID FROM RSSSources where URL like '"+url+"'").ContinueWith (t => {
-				SetProgressBarIndeterminateVisibility (false);
-				entry = t.Result.Select(x=>x.ID).First();
-			}, uiScheduler);
-			return entry;
-
 		}
 
 		private object FindEntryRSSSources(string url)
@@ -196,6 +187,9 @@ namespace Eyegregator
 			rssUtil.Urls = rssSourcesList.Select(x=>x.Url).ToList();
 			rssUtil.bgndWorker.RunWorkerAsync ();
 
+			opType = OpType.Feeds;
+
+			listViewRSS.ItemClick += ListViewItemClick;
 			return true;
 		}
 
@@ -204,6 +198,15 @@ namespace Eyegregator
 
 			switch (opType) {
 			case OpType.Feeds:
+				var clickedItem = listViewRSS.Adapter.GetItem (ea.Position).ToString ();
+				//var link = rssUtil.RssFeeds.FirstOrDefault (x=>x.Value == clickedItem).Key;
+				var link = rssUtil.RssFeeds.FirstOrDefault (x=>x.Title == clickedItem).Link;
+				if(link != String.Empty)
+				{
+					var uri = Android.Net.Uri.Parse (link);
+					var intent = new Intent (Intent.ActionView, uri); 
+					StartActivity (intent); 
+				}
 				//todo open webpage
 				break;
 			case OpType.Sources:

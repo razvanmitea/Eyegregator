@@ -1,2 +1,2 @@
-C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\Eyegregator.dll
-C:\Users\rmitea\Documents\Projects\Eyegregator\Eyegregator\bin\Debug\SQLite.dll
+C:\Users\rmitea\Documents\GitHub\Eyegregator\Eyegregator\bin\Debug\Eyegregator.dll
+C:\Users\rmitea\Documents\GitHub\Eyegregator\Eyegregator\bin\Debug\SQLite.dll
