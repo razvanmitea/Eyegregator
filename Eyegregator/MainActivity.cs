@@ -107,7 +107,7 @@ namespace Eyegregator
 		private void InsertNewEntryRSSSources(string name, string url, string description)
 		{
 			SetProgressBarIndeterminateVisibility (true);
-			name = name.Contains("http://") ? name : String.Format ("{0}" + name, "http://");
+			url = url.Contains("http://") ? url : String.Format ("{0}" + url, "http://");
 			var newRSS = new RSSSources { Name = name, Url = url, Description = description, Date = DateTime.Now };
 			DB.InsertAsync (newRSS).ContinueWith (t => { 
 				SetProgressBarIndeterminateVisibility(false);
@@ -159,7 +159,6 @@ namespace Eyegregator
 			urlInput = (EditText)inputLayout.FindViewById (Resource.Id.editTextURL);
 			descriptionInput = (EditText)inputLayout.FindViewById (Resource.Id.editTextDescription);
 			builder.SetView (inputLayout);
-			urlInput.Text = "http://";
 			builder.SetPositiveButton ("Create", (sender, args) => InsertNewEntryRSSSources (nameInput.Text, urlInput.Text,descriptionInput.Text));
 			builder.SetNegativeButton ("Cancel", (IDialogInterfaceOnClickListener)null);
 
